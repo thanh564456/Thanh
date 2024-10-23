@@ -1,74 +1,72 @@
-/* Thiết lập cho toàn bộ trang */
-body {
-    background-color: #f0f4f8; /* Màu nền nhẹ nhàng */
-    font-family: 'Arial', sans-serif; /* Phông chữ dễ đọc */
-    color: #333; /* Màu chữ tối */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* Container chính */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4; /* Màu nền nhẹ nhàng */
+    color: #333; /* Màu chữ */
+    line-height: 1.6; /* Độ cao dòng */
+}
+
 .container {
-    width: 80%; /* Kích thước chiếm 80% chiều rộng */
-    max-width: 800px; /* Giới hạn chiều rộng tối đa */
-    margin: 40px auto; /* Căn giữa và tạo khoảng cách từ trên xuống */
-    padding: 20px; /* Padding xung quanh */
-    background-color: #ffffff; /* Màu nền trắng cho container */
-    border-radius: 10px; /* Đường bo góc */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng */
+    max-width: 800px; /* Đặt chiều rộng tối đa */
+    margin: 40px auto; /* Giữa trang */
+    padding: 20px;
+    background-color: #fff; /* Màu nền trắng cho nội dung */
+    border-radius: 10px; /* Bo tròn góc */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+    transition: transform 0.2s; /* Hiệu ứng chuyển động */
 }
 
-/* Tiêu đề chính */
+.container:hover {
+    transform: translateY(-5px); /* Hiệu ứng nâng lên khi hover */
+}
+
 h1 {
-    text-align: center; /* Căn giữa */
-    color: #007bff; /* Màu xanh cho tiêu đề */
-    margin-bottom: 20px; /* Khoảng cách dưới */
-    font-size: 2.5em; /* Kích thước chữ lớn */
+    text-align: center;
+    color: #2c3e50; /* Màu tiêu đề */
+    margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
 }
 
-/* Đoạn văn bản */
-p, li {
-    line-height: 1.8; /* Khoảng cách giữa các dòng */
-    font-size: 1.1em; /* Kích thước chữ vừa phải */
-    margin-bottom: 15px; /* Khoảng cách dưới mỗi đoạn */
+p, ul {
+    margin-bottom: 15px; /* Khoảng cách giữa các đoạn */
 }
 
-/* Danh sách không thứ tự */
 ul {
-    padding-left: 20px; /* Khoảng cách bên trái cho danh sách */
+    list-style-type: none; /* Bỏ dấu chấm đầu dòng */
+    padding-left: 0; /* Bỏ lề trái */
 }
 
-/* Điều hướng */
 .nav {
-    text-align: center; /* Căn giữa */
-    margin-top: 30px; /* Khoảng cách trên */
+    text-align: center;
+    margin-top: 20px; /* Khoảng cách trên menu */
 }
 
 .nav a {
     margin: 0 15px; /* Khoảng cách giữa các liên kết */
     text-decoration: none; /* Bỏ gạch chân */
-    color: #007bff; /* Màu xanh cho các liên kết */
-    padding: 10px 15px; /* Padding cho nút */
-    border-radius: 5px; /* Đường bo góc cho nút */
-    transition: background-color 0.3s, color 0.3s; /* Hiệu ứng chuyển màu khi hover */
+    color: #007bff; /* Màu chữ liên kết */
+    font-weight: bold; /* Chữ đậm */
+    transition: color 0.3s; /* Hiệu ứng chuyển màu */
 }
 
 .nav a:hover {
-    background-color: #007bff; /* Màu nền khi hover */
-    color: white; /* Màu chữ trắng khi hover */
+    color: #0056b3; /* Màu khi hover */
 }
 
-/* Hiệu ứng cho các nút */
-button {
-    background-color: #28a745; /* Màu xanh lá cho nút */
-    color: white; /* Màu chữ trắng */
-    border: none; /* Bỏ viền */
-    border-radius: 5px; /* Đường bo góc */
-    padding: 10px 20px; /* Padding cho nút */
-    cursor: pointer; /* Con trỏ chuột khi hover */
-    transition: background-color 0.3s; /* Hiệu ứng chuyển màu */
+footer {
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #777; /* Màu chữ chân trang */
 }
 
-button:hover {
-    background-color: #218838; /* Màu nền khi hover */
-}
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Chiều rộng cho màn hình nhỏ */
+    }
+    }
