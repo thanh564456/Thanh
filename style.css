@@ -1,0 +1,71 @@
+/* Reset một số kiểu mặc định */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Thiết lập phông chữ chung cho toàn bộ trang */
+body {
+    font-family: 'Arial', sans-serif; /* Sử dụng phông chữ sans-serif */
+    line-height: 1.6; /* Khoảng cách giữa các dòng */
+    background-color: #f4f4f4; /* Màu nền nhẹ nhàng */
+    color: #333; /* Màu chữ tối */
+    padding: 20px; /* Padding cho body */
+}
+
+/* Kiểu cho tiêu đề chính */
+h1 {
+    font-size: 2.5em; /* Kích thước chữ lớn cho tiêu đề */
+    margin-bottom: 20px; /* Khoảng cách phía dưới tiêu đề */
+    color: #007BFF; /* Màu chữ cho tiêu đề */
+}
+
+/* Kiểu cho các đoạn văn */
+p {
+    font-size: 1.1em; /* Kích thước chữ cho đoạn văn */
+    margin-bottom: 20px; /* Khoảng cách giữa các đoạn */
+}
+
+/* Kiểu cho container chính */
+.container {
+    max-width: 800px; /* Chiều rộng tối đa cho container */
+    margin: auto; /* Giữa trang */
+    background: white; /* Màu nền trắng cho container */
+    padding: 20px; /* Padding bên trong container */
+    border-radius: 8px; /* Bo góc cho container */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+}
+
+/* Kiểu cho nút */
+button {
+    background-color: #007BFF; /* Màu nền nút */
+    color: white; /* Màu chữ trên nút */
+    border: none; /* Không có viền */
+    padding: 10px 20px; /* Padding cho nút */
+    border-radius: 5px; /* Bo góc cho nút */
+    cursor: pointer; /* Hiển thị con trỏ chuột khi hover */
+    font-size: 1em; /* Kích thước chữ cho nút */
+}
+
+/* Hiệu ứng hover cho nút */
+button:hover {
+    background-color: #0056b3; /* Màu nền khi hover */
+}
+
+/* Kiểu cho hình ảnh */
+img {
+    max-width: 100%; /* Đảm bảo hình ảnh không vượt quá chiều rộng container */
+    height: auto; /* Tự động điều chỉnh chiều cao */
+    border-radius: 8px; /* Bo góc cho hình ảnh */
+}
+
+/* Kiểu cho các liên kết */
+a {
+    color: #007BFF; /* Màu chữ cho liên kết */
+    text-decoration: none; /* Không có gạch chân */
+}
+
+a:hover {
+    text-decoration: underline; /* Gạch chân khi hover */
+}
