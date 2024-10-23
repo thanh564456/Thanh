@@ -1,117 +1,198 @@
-/* Thiết lập kiểu cho toàn bộ trang */
-body {
+/* Reset CSS for better consistency across browsers */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
     margin: 0;
-    font-family: 'Arial', sans-serif;
+    padding: 0;
+}
+
+/* Root Variables */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --font-main: 'Poppins', sans-serif;
+    --font-accent: 'Roboto', sans-serif;
+    --transition-fast: 0.3s ease-in-out;
+    --transition-slow: 0.8s ease-in-out;
+}
+
+/* Typography */
+body {
+    font-family: var(--font-main);
+    line-height: 1.6;
+    background-color: #f4f4f4;
     color: #333;
-    background: linear-gradient(135deg, #e2e2e2 0%, #ffffff 100%);
-    padding: 0 20px; /* Padding cho toàn bộ trang */
+    padding: 20px;
 }
 
-/* Kiểu cho khung chứa nội dung */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-accent);
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* Responsive Grid System */
 .container {
-    max-width: 800px; /* Tối đa chiều rộng */
-    margin: 40px auto; /* Tự động căn giữa */
-    padding: 30px;
-    background-color: #fff; /* Màu nền trắng */
-    border-radius: 12px; /* Bo góc */
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1); /* Đổ bóng */
-    transition: transform 0.3s; /* Hiệu ứng phóng to */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 20px;
 }
 
-.container:hover {
-    transform: translateY(-5px); /* Di chuyển lên nhẹ khi hover */
+.card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: box-shadow var(--transition-fast), transform var(--transition-fast);
 }
 
-/* Kiểu cho tiêu đề */
-h1 {
-    text-align: center; /* Canh giữa */
-    font-size: 2.5em; /* Kích thước chữ lớn */
-    color: #007bff; /* Màu chữ */
-    margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+.card:hover {
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+    transform: translateY(-10px);
 }
 
-/* Kiểu cho các đoạn văn */
-p {
-    line-height: 1.6; /* Khoảng cách giữa các dòng */
-    margin-bottom: 15px; /* Khoảng cách dưới các đoạn */
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
-/* Kiểu cho danh sách */
-ul {
-    line-height: 1.8; /* Khoảng cách giữa các dòng */
-    padding-left: 20px; /* Khoảng cách bên trái */
+.fade-in {
+    animation: fadeIn var(--transition-slow) both;
 }
 
-/* Kiểu cho thanh điều hướng */
-.nav {
-    text-align: center; /* Canh giữa */
-    margin-bottom: 20px; /* Khoảng cách dưới thanh điều hướng */
+/* Flexbox for Layouts */
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Kiểu cho các liên kết trong thanh điều hướng */
-.nav a {
-    margin: 0 15px; /* Khoảng cách bên trái và bên phải */
-    text-decoration: none; /* Bỏ gạch chân */
-    color: #007bff; /* Màu chữ */
-    padding: 10px 15px; /* Padding cho nút */
-    border-radius: 5px; /* Bo góc */
-    transition: background-color 0.3s, color 0.3s; /* Hiệu ứng chuyển màu */
+.flex-column {
+    display: flex;
+    flex-direction: column;
 }
 
-/* Hiệu ứng hover cho các liên kết */
-.nav a:hover {
-    background-color: #007bff; /* Màu nền khi hover */
-    color: #fff; /* Màu chữ khi hover */
+/* Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+    padding: 20px;
+    border-radius: 0 0 20px 20px;
 }
 
-/* Kiểu cho các nút */
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar ul li {
+    margin-right: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color var(--transition-fast);
+}
+
+.navbar a:hover {
+    color: var(--secondary-color);
+}
+
+/* Hero Section with Background Image */
+.hero {
+    background-image: url('https://your-image-url.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero h1 {
+    font-size: 4rem;
+    animation: fadeIn var(--transition-fast) both;
+}
+
+/* Buttons */
 .button {
-    display: inline-block; /* Hiển thị như nút */
-    padding: 10px 20px; /* Padding cho nút */
-    background-color: #007bff; /* Màu nền */
-    color: white; /* Màu chữ */
-    border: none; /* Không có viền */
-    border-radius: 5px; /* Bo góc */
-    font-size: 16px; /* Kích thước chữ */
-    cursor: pointer; /* Hiển thị con trỏ khi hover */
-    transition: background-color 0.3s, transform 0.3s; /* Hiệu ứng chuyển màu */
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    transition: background-color var(--transition-fast), transform var(--transition-fast);
 }
 
-/* Hiệu ứng hover cho nút */
 .button:hover {
-    background-color: #0056b3; /* Màu nền khi hover */
-    transform: scale(1.05); /* Phóng to nút khi hover */
+    background-color: #27ae60;
+    transform: scale(1.05);
 }
 
-/* Kiểu cho các ô nhập liệu */
-input[type="text"],
-input[type="email"],
-textarea {
-    width: 100%; /* Chiều rộng 100% */
-    padding: 10px; /* Padding cho ô nhập liệu */
-    margin-top: 10px; /* Khoảng cách trên */
-    border: 1px solid #ddd; /* Viền xám nhạt */
-    border-radius: 5px; /* Bo góc */
-    transition: border-color 0.3s; /* Hiệu ứng chuyển màu viền */
+/* Media Queries */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+    }
+
+    .button {
+        width: 100%;
+        text-align: center;
+    }
 }
 
-/* Hiệu ứng focus cho ô nhập liệu */
-input[type="text"]:focus,
-input[type="email"]:focus,
-textarea:focus {
-    border-color: #007bff; /* Màu viền khi focus */
-    outline: none; /* Bỏ outline */
+/* Advanced CSS Effects */
+.text-glow {
+    font-size: 2rem;
+    color: var(--primary-color);
+    text-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color), 0 0 30px var(--primary-color);
+    animation: glow 1.5s infinite alternate;
 }
 
-/* Kiểu cho các biểu mẫu */
-form {
-    margin-top: 20px; /* Khoảng cách trên cho biểu mẫu */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color), 0 0 30px var(--primary-color);
+    }
+    to {
+        text-shadow: 0 0 20px var(--primary-color), 0 0 30px var(--primary-color), 0 0 40px var(--primary-color);
+    }
 }
 
-/* Kiểu cho phần footer */
-footer {
-    text-align: center; /* Canh giữa */
-    margin-top: 40px; /* Khoảng cách trên */
-    font-size: 14px; /* Kích thước chữ nhỏ */
-    color: #666; /* Màu chữ xám */
+/* Footer Styling */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color var(--transition-fast);
+}
+
+.footer a:hover {
+    color: var(--secondary-color);
 }
