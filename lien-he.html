@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liên hệ</title>
+    <title>Liên hệ - Lương Trường Thành</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             background-color: #f9f9f9;
+            color: #333;
         }
+
         .container {
             max-width: 900px;
             margin: auto;
@@ -19,50 +22,132 @@
             border-radius: 8px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
         }
+
         h1 {
             text-align: center;
+            margin-bottom: 20px;
             color: #333;
         }
-        p {
+
+        p, li {
             line-height: 1.6;
+            margin-bottom: 20px;
         }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            margin-bottom: 15px;
+            padding: 15px;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        ul li:hover {
+            background-color: #007BFF;
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        ul li:hover strong {
+            color: white;
+        }
+
         .nav {
+            display: flex;
+            justify-content: center;
             margin-top: 20px;
-            text-align: center;
         }
+
         .nav a {
-            margin: 0 10px;
+            margin: 0 15px;
             text-decoration: none;
             color: #007BFF;
+            transition: color 0.3s;
         }
+
+        .nav a:hover {
+            color: #0056b3;
+        }
+
         footer {
             text-align: center;
             margin-top: 20px;
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .contact-info p {
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        .social-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            margin: 0 15px;
+            color: #007BFF;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            color: #0056b3;
+        }
+
+        @media (max-width: 600px) {
+            .nav {
+                flex-direction: column;
+            }
+
+            .nav a {
+                margin: 10px 0;
+            }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1>Liên hệ</h1>
-        <p><strong>Email:</strong> luongsinh357@gmail.com</p>
-        <p><strong>Số điện thoại:</strong> 0345815100</p>
-        <p><strong>Địa chỉ:</strong> KTX Đại học Sư phạm TP.HCM</p>
-        <p><strong>Mạng xã hội:</strong></p>
-        <ul>
-            <li><strong>Facebook:</strong> facebook.com/luongtruongthanh</li>
-            <li><strong>LinkedIn:</strong> linkedin.com/in/luongtruongthanh</li>
-        </ul>
-        <p><strong>Giới thiệu về bản thân:</strong> Tôi là sinh viên năm nhất tại Đại học Sư phạm TP.HCM, ngành Công nghệ Thông tin. Tôi rất hứng thú với lập trình và luôn tìm kiếm cơ hội để học hỏi thêm. Tôi hy vọng có thể kết nối với nhiều bạn bè và đồng nghiệp trong lĩnh vực công nghệ.</p>
-        <p>Bạn có thể liên hệ với tôi qua email hoặc điện thoại nếu có bất kỳ câu hỏi nào hoặc muốn trao đổi thêm về lập trình và công nghệ!</p>
+
+        <div class="contact-info">
+            <p>Email: luongsinh357@gmail.com</p>
+            <p>Số điện thoại: 0345815100</p>
+            <p>Địa chỉ: KTX Đại học Sư phạm TP.HCM</p>
+        </div>
+
+        <div class="social-links">
+            <h2>Mạng xã hội</h2>
+            <a href="https://facebook.com/luongtruongthanh" target="_blank">Facebook</a>
+            <a href="https://linkedin.com/in/luongtruongthanh" target="_blank">LinkedIn</a>
+        </div>
+
+        <p class="about-me">Tôi là sinh viên ngành Công nghệ Thông tin tại Đại học Sư phạm TP.HCM. Tôi rất hứng thú với lập trình và luôn tìm kiếm cơ hội để học hỏi thêm. Bạn có thể liên hệ với tôi qua email hoặc điện thoại để trao đổi thêm về lập trình và công nghệ.</p>
 
         <div class="nav">
-            <a href="index.html">Trang chủ</a> |
-            <a href="ke-hoach-hoc-tap.html">Kế hoạch học tập</a> |
+            <a href="index.html">Trang chủ</a>
+            <a href="ke-hoach-hoc-tap.html">Kế hoạch học tập</a>
             <a href="so-thich.html">Sở thích</a>
         </div>
     </div>
+
     <footer>
         <p>&copy; 2024 Lương Trường Thành. Tất cả các quyền được bảo lưu.</p>
     </footer>
 </body>
+
 </html>
