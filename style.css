@@ -1,1282 +1,220 @@
-/* Pop-up Modal */
-.modal {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    max-width: 600px;
-    background: var(--background-color);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    border-radius: var(--border-radius);
-    z-index: 100;
-    overflow: hidden;
-}
-
-.modal.active {
-    display: block;
-    animation: modalIn 0.4s ease;
-}
-
-.modal-header, .modal-footer {
-    padding: 15px;
-    background: var(--primary-color);
-    color: white;
-}
-
-.modal-body {
-    padding: 20px;
-}
-
-.modal-close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 1.2rem;
-    color: white;
-    cursor: pointer;
-}
-
-@keyframes modalIn {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
-}
-
-/* Parallax Image Background */
-.parallax-bg {
-    background: url('https://example.com/parallax.jpg') center/cover no-repeat;
-    height: 50vh;
-    position: relative;
-    overflow: hidden;
-}
-
-.parallax-bg::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 1;
-}
-
-.parallax-bg-content {
-    position: relative;
-    z-index: 2;
-    color: #fff;
-    text-align: center;
-    padding: 60px 20px;
-    font-size: 1.5rem;
-}
-
-/* Advanced Dropdown Menu */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: var(--background-color);
-    min-width: 160px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    transition: opacity 0.3s ease;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-    opacity: 1;
-}
-
-.dropdown-content a {
-    color: var(--text-color);
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: var(--secondary-color);
-    color: white;
-}
-
-/* Floating Chat Bubble */
-.chat-bubble {
-    position: fixed;
-    bottom: 50px;
-    right: 50px;
-    width: 60px;
-    height: 60px;
-    background-color: var(--accent-color);
-    border-radius: 50%;
-    box-shadow: 0 4px 15px var(--shadow-color);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1.5rem;
-    animation: bubblePulse 2s infinite;
-}
-
-@keyframes bubblePulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-}
-
-/* Carousel Component */
-.carousel {
-    display: flex;
-    overflow: hidden;
-    width: 100%;
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.carousel-item {
-    min-width: 100%;
-    transition: transform 0.5s ease;
-}
-
-.carousel-item img {
-    width: 100%;
-    height: auto;
-}
-
-.carousel-buttons {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.carousel-button {
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 50%;
-    transition: background 0.3s;
-}
-
-.carousel-button:hover {
-    background: rgba(0, 0, 0, 0.8);
-}
-
-/* Progress Bar */
-.progress-bar {
-    width: 100%;
-    background-color: #ddd;
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    margin: 20px 0;
-}
-
-.progress-bar-fill {
-    width: 0;
-    height: 20px;
-    background-color: var(--primary-color);
-    transition: width 0.5s ease;
-}
-
-.progress-bar-fill.animated {
-    width: 75%; /* Example: Dynamic width */
-}
-
-/* Notification Toast */
-.toast {
-    visibility: hidden;
-    min-width: 250px;
-    margin: 0 auto;
-    background-color: var(--accent-color);
-    color: white;
-    text-align: center;
-    border-radius: var(--border-radius);
-    padding: 16px;
-    position: fixed;
-    z-index: 1;
-    right: 30px;
-    bottom: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.toast.show {
-    visibility: visible;
-    opacity: 1;
-    }
-/* Vertical Timeline */
-.timeline {
-    position: relative;
-    margin: 20px 0;
-    padding: 20px;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    width: 4px;
-    height: 100%;
-    background-color: var(--primary-color);
-    transform: translateX(-50%);
-}
-
-.timeline-item {
-    position: relative;
-    padding: 20px;
-    width: 50%;
-    background-color: var(--background-color);
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-.timeline-item::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    top: 20px;
-}
-
-.timeline-item-left {
-    left: 0;
-}
-
-.timeline-item-left::after {
-    right: -10px;
-    border-width: 10px 10px 10px 0;
-    border-color: transparent var(--background-color) transparent transparent;
-}
-
-.timeline-item-right {
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.timeline-item-right::after {
-    left: -10px;
-    border-width: 10px 0 10px 10px;
-    border-color: transparent transparent transparent var(--background-color);
-}
-
-/* Image Gallery */
-.image-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
-}
-
-.image-gallery-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-
-.image-gallery-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.3s;
-}
-
-.image-gallery-item:hover img {
-    transform: scale(1.1);
-}
-
-/* Testimonials */
-.testimonial {
-    background: var(--background-color);
-    border-radius: var(--border-radius);
-    padding: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s;
-}
-
-.testimonial:hover {
-    transform: translateY(-5px);
-}
-
-.testimonial .quote {
-    font-size: 1.5rem;
-    color: var(--accent-color);
-    margin-bottom: 10px;
-}
-
-.testimonial .author {
-    font-weight: bold;
-    color: var(--primary-color);
-}
-
-/* Badge Ribbon */
-.ribbon {
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    background-color: var(--accent-color);
-    color: #fff;
-    padding: 5px 10px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    transform: rotate(-45deg);
-}
-
-/* Back to Top Button */
-.back-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 40px;
-    height: 40px;
-    background-color: var(--primary-color);
-    color: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    opacity: 0;
-    transition: opacity 0.3s, transform 0.3s;
-    z-index: 10;
-}
-
-.back-to-top.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.back-to-top:hover {
-    background-color: var(--accent-color);
-}
-
-/* Pricing Table */
-.pricing-table {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.pricing-card {
-    background-color: #fff;
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 300px;
-    text-align: center;
-    transition: transform 0.3s;
-}
-
-.pricing-card:hover {
-    transform: translateY(-5px);
-}
-
-.pricing-header {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--primary-color);
-    margin-bottom: 10px;
-}
-
-.pricing-price {
-    font-size: 2rem;
-    color: var(--accent-color);
-    margin-bottom: 20px;
-}
-
-.pricing-features {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.pricing-features li {
-    margin-bottom: 10px;
-}
-
-.pricing-button {
-    margin-top: 15px;
-    display: inline-block;
-    padding: 10px 20px;
-    background: var(--gradient);
-    color: #fff;
-    font-weight: bold;
-    border-radius: var(--border-radius);
-    text-transform: uppercase;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    transition: background 0.3s;
-}
-
-.pricing-button:hover {
-    background: var(--secondary-color);
-}
-
-/* Countdown Timer */
-.countdown {
-    display: flex;
-    gap: 10px;
-    font-size: 2rem;
-    color: var(--primary-color);
-    font-weight: bold;
-    justify-content: center;
-}
-
-.countdown-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.countdown-item span {
-    font-size: 0.8rem;
-    color: var(--text-color);
-    text-transform: uppercase;
-}
-
-/* Expandable Cards */
-.expandable-card {
-    background-color: var(--background-color);
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: max-height 0.5s ease;
-    max-height: 100px;
-    cursor: pointer;
-}
-
-.expandable-card.expanded {
-    max-height: 500px;
-}
-
-.expandable-card-header {
-    padding: 20px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: var(--primary-color);
-}
-
-.expandable-card-content {
-    padding: 15px 20px;
-    display: none;
-}
-
-.expandable-card.expanded .expandable-card-content {
-    display: block;
-    }
-/* Responsive Grid */
-.responsive-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-}
-
-.responsive-grid-item {
-    background-color: #fff;
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-    padding: 15px;
-    text-align: center;
-}
-
-.responsive-grid-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* Progress Bar */
-.progress-bar {
-    position: relative;
-    background-color: #e0e0e0;
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    height: 20px;
-}
-
-.progress-bar-inner {
-    background: var(--gradient);
-    width: 0;
-    height: 100%;
-    transition: width 0.5s ease;
-}
-
-.progress-bar-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-weight: bold;
-    color: #fff;
-    font-size: 0.9rem;
-}
-
-/* Image Hover Effect */
-.image-hover {
-    position: relative;
-    overflow: hidden;
-    border-radius: var(--border-radius);
-    transition: transform 0.3s ease;
-    cursor: pointer;
-}
-
-.image-hover img {
-    display: block;
-    width: 100%;
-    transition: transform 0.3s ease;
-}
-
-.image-hover:hover img {
-    transform: scale(1.1);
-}
-
-.image-hover-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.image-hover:hover .image-hover-overlay {
-    opacity: 1;
-}
-
-/* Stats Counter */
-.stats-counter {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-}
-
-.stats-item {
-    text-align: center;
-    color: var(--text-color);
-}
-
-.stats-item h3 {
-    font-size: 2rem;
-    color: var(--primary-color);
-    margin: 0;
-}
-
-.stats-item p {
-    margin: 0;
-    font-size: 1rem;
-}
-
-/* Flip Card */
-.flip-card {
-    perspective: 1000px;
-}
-
-.flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-}
-
-.flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-}
-
-.flip-card-front,
-.flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.flip-card-front {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-.flip-card-back {
-    background-color: var(--secondary-color);
-    color: white;
-    transform: rotateY(180deg);
-}
-
-/* Modal */
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.modal.show {
-    visibility: visible;
-    opacity: 1;
-}
-
-.modal-content {
-    background-color: #fff;
-    border-radius: var(--border-radius);
-    padding: 20px;
-    max-width: 500px;
-    width: 100%;
-    text-align: center;
-    position: relative;
-}
-
-.modal-close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: var(--accent-color);
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    font-size: 1rem;
-    cursor: pointer;
-}
-
-/* Notification Toast */
-.toast {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: var(--accent-color);
-    color: white;
-    padding: 15px 20px;
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    opacity: 0;
-    transform: translateY(-20px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.toast.show {
-    opacity: 1;
-    transform: translateY(0);
-    }
-/* Vertical Timeline */
-.timeline {
-    position: relative;
-    padding: 20px 0;
-}
-
-.timeline-item {
-    position: relative;
-    margin: 20px 0;
-}
-
-.timeline-item::before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 0;
-    height: 100%;
-    width: 4px;
-    background: var(--primary-color);
-    transform: translateX(-50%);
-}
-
-.timeline-content {
-    position: relative;
-    background: #fff;
-    border-radius: var(--border-radius);
-    padding: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.timeline-content h4 {
-    margin: 0 0 10px;
-    color: var(--primary-color);
-}
-
-.timeline-content p {
-    margin: 0;
-}
-
-/* Image Gallery */
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.gallery-item {
-    flex: 1 1 calc(33.333% - 10px);
-    position: relative;
-    overflow: hidden;
-    border-radius: var(--border-radius);
-    transition: transform 0.3s ease;
-}
-
-.gallery-item:hover {
-    transform: scale(1.05);
-}
-
-.gallery-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Testimonials */
-.testimonials {
-    background-color: var(--background-color);
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.testimonial {
-    margin: 20px 0;
-    padding: 20px;
-    background: #fff;
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.testimonial p {
-    font-style: italic;
-}
-
-.testimonial h5 {
-    margin-top: 10px;
-    color: var(--primary-color);
-}
-
-/* Countdown Timer */
-.countdown {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    font-size: 2rem;
-}
-
-.countdown-item {
-    text-align: center;
-    background: var(--primary-color);
-    color: white;
-    border-radius: var(--border-radius);
-    padding: 10px;
-}
-
-/* Custom Select */
-.custom-select {
-    position: relative;
-    display: inline-block;
-}
-
-.custom-select select {
-    display: none; /* Hide original select */
-}
-
-.select-selected {
-    background-color: var(--background-color);
-    padding: 10px;
-    border-radius: var(--border-radius);
-    border: 1px solid #ddd;
-    cursor: pointer;
-}
-
-.select-items {
-    position: absolute;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: var(--border-radius);
-    z-index: 99;
-    width: 100%;
-    display: none;
-    max-height: 200px;
-    overflow-y: auto;
-}
-
-.select-item {
-    padding: 10px;
-    cursor: pointer;
-}
-
-.select-item:hover {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-/* Tabs */
-.tabs {
-    display: flex;
-    border-bottom: 2px solid var(--primary-color);
-}
-
-.tab {
-    padding: 10px 20px;
-    cursor: pointer;
-    color: var(--text-color);
-}
-
-.tab.active {
-    border-bottom: 2px solid var(--primary-color);
-    font-weight: bold;
-}
-
-.tab-content {
-    padding: 20px;
-    background: #fff;
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* Sticky Header */
-.sticky-header {
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background-color: #fff;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
-}
-
-/* Dark Mode */
-body.dark-mode {
-    background-color: #333;
-    color: #fff;
-}
-
-body.dark-mode h1,
-body.dark-mode h2,
-body.dark-mode h3 {
-    color: var(--secondary-color);
-}
-
-body.dark-mode .button {
-    background: var(--accent-color);
-}
-
-body.dark-mode .navbar {
-    background-color: #222;
-}
-
-body.dark-mode .footer {
-    background-color: #444;
-}
-
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: var(--primary-color);
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    }
-/* Accordion Styling */
-.accordion {
-    background-color: var(--background-color);
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.accordion-item {
-    border-bottom: 1px solid #ddd;
-}
-
-.accordion-item-header {
-    padding: 15px;
-    cursor: pointer;
-    background: var(--primary-color);
-    color: white;
-    font-weight: bold;
-    transition: background 0.3s;
-}
-
-.accordion-item-header:hover {
-    background: var(--secondary-color);
-}
-
-.accordion-item-content {
-    padding: 15px;
-    background: #fff;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-}
-
-/* Notification Toast Container */
-.toast-container {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-}
-
-/* Sidebar */
-.sidebar {
-    width: 250px;
-    background-color: var(--primary-color);
-    color: white;
-    position: fixed;
-    top: 0;
-    left: -250px;
-    height: 100%;
-    transition: left 0.3s ease;
-    padding: 20px;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.sidebar.open {
-    left: 0;
-}
-
-.sidebar ul {
-    list-style: none;
-    padding: 0;
-}
-
-.sidebar li {
-    margin: 10px 0;
-}
-
-.sidebar a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.sidebar a:hover {
-    color: var(--accent-color);
-}
-
-/* Back to Top Button */
-.back-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.back-to-top:hover {
-    background: var(--secondary-color);
-}
-
-/* Tooltip with Arrow */
-.tooltip {
-    position: relative;
-    display: inline-block;
-}
-
-.tooltip .tooltip-text {
-    visibility: hidden;
-    width: 120px;
-    background-color: var(--accent-color);
-    color: #fff;
-    text-align: center;
-    padding: 8px;
-    border-radius: var(--border-radius);
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.tooltip:hover .tooltip-text {
-    visibility: visible;
-    opacity: 1;
-}
-
-/* Carousel */
-.carousel {
-    position: relative;
-    overflow: hidden;
-}
-
-.carousel-images {
-    display: flex;
-    transition: transform 0.5s ease;
-}
-
-.carousel-image {
-    min-width: 100%;
-}
-
-.carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    padding: 10px;
-    z-index: 10;
-}
-
-.carousel-button.prev {
-    left: 10px;
-}
-
-.carousel-button.next {
-    right: 10px;
-}
-
-/* Snackbar */
-.snackbar {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--primary-color);
-    color: white;
-    padding: 16px;
-    border-radius: var(--border-radius);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    transition: opacity 0.3s ease;
-    opacity: 0;
-}
-
-.snackbar.show {
-    opacity: 1;
-}
-
-/* Page Loader */
-.page-loader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.9);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
-
-.page-loader .spinner {
-    border: 4px solid rgba(0, 0, 0, 0.1);
-    border-top: 4px solid var(--primary-color);
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 1s linear infinite;
-}
-/* Image Hover Effect */
-.image-hover-container {
-    position: relative;
-    overflow: hidden;
-    border-radius: var(--border-radius);
-}
-
-.image-hover-container img {
-    width: 100%;
-    transition: transform 0.5s ease;
-}
-
-.image-hover-container:hover img {
-    transform: scale(1.1);
-}
-
-.image-hover-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.image-hover-container:hover .image-hover-overlay {
-    opacity: 1;
-}
-
-/* Flip Card */
-.flip-card {
-    background-color: transparent;
-    width: 300px;
-    height: 200px;
-    perspective: 1000px;
-}
-
-.flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-}
-
-.flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-}
-
-.flip-card-front,
-.flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.flip-card-front {
-    background-color: #fff;
-}
-
-.flip-card-back {
-    background-color: var(--primary-color);
-    color: white;
-    transform: rotateY(180deg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Modal */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.7);
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    width: 80%;
-    max-width: 600px;
-}
-
-.modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.modal-header h2 {
-    margin: 0;
-}
-
-.modal-header .close {
-    cursor: pointer;
-    font-size: 1.5rem;
-}
-
-/* Progress Bar */
-.progress-container {
-    background: #f1f1f1;
-    border-radius: var(--border-radius);
-    overflow: hidden;
-}
-
-.progress-bar {
-    height: 20px;
-    background: var(--primary-color);
-    width: 0;
-    transition: width 0.5s;
-}
-
-/* Responsive Design */
+/* Thiết lập kiểu cho toàn bộ trang */
+body {
+    font-family: 'Arial', sans-serif; /* Font chữ mặc định */
+    line-height: 1.6; /* Khoảng cách giữa các dòng */
+    background-color: #f0f4f8; /* Màu nền trang */
+    color: #333; /* Màu chữ chính */
+    margin: 0; /* Bỏ lề mặc định */
+    padding: 0; /* Bỏ đệm mặc định */
+}
+
+/* Bố cục cho container chính */
+.container {
+    max-width: 1200px; /* Chiều rộng tối đa của container */
+    margin: 0 auto; /* Căn giữa container */
+    padding: 20px; /* Khoảng cách bên trong container */
+    background: white; /* Màu nền trắng */
+    border-radius: 12px; /* Bo tròn góc container */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng */
+}
+
+/* Phong cách cho tiêu đề chính */
+h1 {
+    font-size: 3em; /* Kích thước chữ cho tiêu đề chính */
+    color: #007BFF; /* Màu chữ cho tiêu đề chính */
+    margin-bottom: 20px; /* Khoảng cách dưới tiêu đề chính */
+    text-align: center; /* Căn giữa chữ */
+    text-transform: uppercase; /* Chữ in hoa */
+    letter-spacing: 1px; /* Khoảng cách giữa các chữ cái */
+}
+
+/* Định dạng cho tiêu đề section */
+.section-title {
+    font-size: 2.5em; /* Kích thước chữ cho tiêu đề section */
+    color: #343a40; /* Màu chữ cho tiêu đề section */
+    margin-bottom: 15px; /* Khoảng cách dưới tiêu đề section */
+    border-bottom: 3px solid #007BFF; /* Đường viền dưới tiêu đề */
+    padding-bottom: 10px; /* Khoảng cách dưới chữ tiêu đề */
+    font-weight: bold; /* In đậm tiêu đề */
+}
+
+/* Định dạng cho nội dung section */
+.section-content {
+    margin-bottom: 30px; /* Khoảng cách dưới nội dung section */
+    padding: 30px; /* Khoảng cách bên trong cho nội dung section */
+    border-radius: 8px; /* Bo tròn góc */
+    background: #f9f9f9; /* Màu nền cho nội dung section */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng cho nội dung */
+    transition: transform 0.3s, box-shadow 0.3s; /* Hiệu ứng chuyển đổi cho nội dung */
+}
+
+.section-content:hover {
+    transform: translateY(-5px); /* Di chuyển nội dung lên khi hover */
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2); /* Tăng cường bóng khi hover */
+}
+
+/* Định dạng cho các thẻ nhập liệu */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%; /* Chiều rộng 100% cho các ô nhập liệu */
+    padding: 15px; /* Khoảng cách bên trong */
+    margin: 10px 0; /* Khoảng cách trên và dưới */
+    border: 2px solid #007BFF; /* Đường viền cho ô nhập liệu */
+    border-radius: 5px; /* Bo tròn góc */
+    transition: border 0.3s, box-shadow 0.3s; /* Hiệu ứng chuyển đổi cho viền và bóng */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border: 2px solid #0056b3; /* Màu viền khi ô nhập liệu được chọn */
+    box-shadow: 0 0 8px rgba(0, 86, 179, 0.5); /* Hiệu ứng bóng khi ô được chọn */
+    outline: none; /* Bỏ outline */
+}
+
+/* Định dạng cho nút gửi */
+input[type="submit"] {
+    background-color: #28a745; /* Màu nền cho nút gửi */
+    color: white; /* Màu chữ */
+    border: none; /* Bỏ viền */
+    border-radius: 5px; /* Bo tròn góc */
+    padding: 12px 25px; /* Khoảng cách bên trong */
+    cursor: pointer; /* Hiển thị con trỏ tay khi hover */
+    transition: background-color 0.3s, transform 0.3s; /* Hiệu ứng chuyển màu và biến đổi */
+    font-size: 1.1em; /* Kích thước chữ cho nút gửi */
+    font-weight: bold; /* In đậm chữ */
+}
+
+input[type="submit"]:hover {
+    background-color: #218838; /* Màu nền khi hover */
+    transform: scale(1.05); /* Phóng to nút khi hover */
+}
+
+/* Định dạng cho các thẻ nhãn (label) */
+label {
+    display: block; /* Hiển thị nhãn như một khối */
+    margin: 10px 0 5px; /* Khoảng cách trên và dưới cho nhãn */
+    font-weight: bold; /* In đậm nhãn */
+}
+
+/* Hiệu ứng cho hình ảnh */
+img {
+    max-width: 100%; /* Đảm bảo hình ảnh không vượt quá kích thước chứa */
+    border-radius: 10px; /* Bo tròn góc hình ảnh */
+    transition: transform 0.3s, box-shadow 0.3s; /* Hiệu ứng chuyển đổi cho hình ảnh */
+    border: 5px solid #007BFF; /* Đường viền cho hình ảnh */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng cho hình ảnh */
+}
+
+img:hover {
+    transform: scale(1.05); /* Phóng to hình ảnh khi hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Hiệu ứng bóng cho hình ảnh khi hover */
+}
+
+/* Nút cuộn lên */
+.scroll-up {
+    position: fixed; /* Đặt vị trí cố định */
+    bottom: 20px; /* Cách dưới 20px */
+    right: 20px; /* Cách bên phải 20px */
+    display: flex; /* Sử dụng flexbox để căn giữa nội dung */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    background-color: #007BFF; /* Màu nền cho nút cuộn lên */
+    color: white; /* Màu chữ */
+    border: none; /* Bỏ viền */
+    border-radius: 50%; /* Bo tròn hoàn toàn */
+    width: 60px; /* Chiều rộng */
+    height: 60px; /* Chiều cao */
+    font-size: 24px; /* Kích thước chữ */
+    cursor: pointer; /* Hiển thị con trỏ tay khi hover */
+    transition: background-color 0.3s, transform 0.3s; /* Hiệu ứng chuyển màu và biến đổi */
+    z-index: 1000; /* Đặt độ ưu tiên cao để nút luôn ở trên cùng */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Hiệu ứng bóng cho nút */
+}
+
+.scroll-up:hover {
+    background-color: #0056b3; /* Màu nền khi hover */
+    transform: scale(1.1); /* Phóng to nút khi hover */
+}
+
+/* Hiệu ứng cho footer */
+footer {
+    background: #333; /* Màu nền cho footer */
+    color: white; /* Màu chữ cho footer */
+    text-align: center; /* Căn giữa chữ trong footer */
+    padding: 25px; /* Khoảng cách bên trong footer */
+    position: relative; /* Đặt vị trí tương đối */
+    margin-top: 30px; /* Khoảng cách trên */
+    border-top: 5px solid #007BFF; /* Đường viền trên footer */
+}
+
+/* Định dạng cho liên kết trong footer */
+footer a {
+    color: #fff; /* Màu chữ liên kết */
+    text-decoration: none; /* Bỏ gạch chân */
+    transition: color 0.3s; /* Hiệu ứng chuyển đổi màu chữ */
+}
+
+footer a:hover {
+    color: #007BFF; /* Màu chữ khi hover */
+}
+
+/* Responsive design cho thiết bị di động */
 @media (max-width: 768px) {
-    .gallery-item {
-        flex: 1 1 calc(50% - 10px);
+    h1 {
+        font-size: 2.5em; /* Kích thước chữ cho tiêu đề chính trên thiết bị nhỏ */
     }
 
-    .back-to-top {
-        bottom: 20px;
-        right: 20px;
-        width: 40px;
-        height: 40px;
+    .section-title {
+        font-size: 2em; /* Kích thước chữ cho tiêu đề section trên thiết bị nhỏ */
     }
 
-    .navbar {
-        flex-direction: column;
+    .section-content {
+        padding: 20px; /* Giảm padding cho nội dung section trên thiết bị nhỏ */
     }
 
-    .modal-content {
-        width: 90%;
+    input[type="submit"] {
+        width: 100%; /* Đặt chiều rộng nút gửi là 100% trên thiết bị nhỏ */
+    }
+
+    .scroll-up {
+        width: 50px; /* Giảm chiều rộng nút cuộn lên trên thiết bị nhỏ */
+        height: 50px; /* Giảm chiều cao nút cuộn lên trên thiết bị nhỏ */
+        font-size: 20px; /* Giảm kích thước chữ nút cuộn lên trên thiết bị nhỏ */
+    }
+
+    footer {
+        font-size: 0.9em; /* Giảm kích thước chữ cho footer trên thiết bị nhỏ */
     }
 }
 
+/* Thêm các hiệu ứng cho tiêu đề nhỏ và nội dung */
 @media (max-width: 480px) {
-    .gallery-item {
-        flex: 1 1 100%;
+    h1 {
+        font-size: 2em; /* Kích thước chữ cho tiêu đề chính trên thiết bị rất nhỏ */
     }
 
-    .carousel-button {
-        padding: 5px;
+    .section-title {
+        font-size: 1.8em; /* Kích thước chữ cho tiêu đề section trên thiết bị rất nhỏ */
     }
 
-    .back-to-top {
-        width: 30px;
-        height: 30px;
+    .section-content {
+        padding: 15px; /* Giảm padding cho nội dung section trên thiết bị rất nhỏ */
     }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        font-size: 0.9em; /* Giảm kích thước chữ cho ô nhập liệu */
     }
+
+    input[type="submit"] {
+        font-size: 1em; /* Giảm kích thước chữ cho nút gửi */
+    }
+
+    footer {
+        font-size: 0.8em; /* Giảm kích thước chữ cho footer trên thiết bị rất nhỏ */
+    }
+}
+        
