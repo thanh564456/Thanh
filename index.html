@@ -5,104 +5,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thông tin cá nhân - Lương Trường Thành</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Liên kết tới tệp CSS riêng -->
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        p {
-            line-height: 1.6;
-            margin: 10px 0;
-        }
-
-        .nav {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #007BFF;
-            transition: color 0.3s;
-        }
-
-        .nav a:hover {
-            color: #0056b3;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 0.9em;
-            color: #777;
-        }
-
-        ul {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
-
-        @media (max-width: 600px) {
-            .nav {
-                flex-direction: column;
-            }
-
-            .nav a {
-                margin: 10px 0;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css"> <!-- Liên kết tới tệp CSS -->
 </head>
 
 <body>
     <div class="container">
-        <h1>Thông tin cá nhân</h1>
-        <p><strong>Họ tên:</strong> Lương Trường Thành</p>
-        <p><strong>Tuổi:</strong> 18</p>
-        <p><strong>Ngày sinh:</strong> 27/04/2006</p>
-        <p><strong>Số điện thoại:</strong> 0345815100</p>
-        <p><strong>Địa chỉ:</strong> KTX Đại học Sư phạm TP.HCM</p>
-        <p><strong>Email:</strong> <a href="mailto:luongsinh357@gmail.com">luongsinh357@gmail.com</a></p>
-        <p><strong>Môn học yêu thích:</strong> Lập trình và thiết kế web.</p>
-        <p><strong>Đam mê:</strong> Công nghệ thông tin và phát triển phần mềm. Tôi luôn tìm kiếm cơ hội học hỏi và phát triển kỹ năng lập trình.</p>
-        <p><strong>Mục tiêu nghề nghiệp:</strong> Trở thành lập trình viên phần mềm chuyên nghiệp, làm việc trong môi trường sáng tạo và phát triển.</p>
-        <p><strong>Kỹ năng:</strong></p>
-        <ul>
-            <li>Kỹ năng lập trình: Python, C++, JavaScript.</li>
-            <li>Kỹ năng thiết kế web: HTML, CSS, React.</li>
-            <li>Kỹ năng làm việc nhóm và giao tiếp hiệu quả.</li>
-        </ul>
-
-        <div class="nav">
-            <a href="ke-hoach-hoc-tap.html">Kế hoạch học tập</a>
-            <a href="so-thich.html">Sở thích</a>
-            <a href="lien-he.html">Liên hệ</a>
-        </div>
+        <header>
+            <h1>Thông tin cá nhân</h1>
+        </header>
+        <main>
+            <section>
+                <p><strong>Họ tên:</strong> Lương Trường Thành</p>
+                <p><strong>Tuổi:</strong> 18</p>
+                <p><strong>Ngày sinh:</strong> 27/04/2006</p>
+                <p><strong>Số điện thoại:</strong> 0345815100</p>
+                <p><strong>Địa chỉ:</strong> KTX Đại học Sư phạm TP.HCM</p>
+                <p><strong>Email:</strong> <a href="mailto:luongsinh357@gmail.com">luongsinh357@gmail.com</a></p>
+                <p><strong>Môn học yêu thích:</strong> Lập trình và thiết kế web.</p>
+                <p><strong>Đam mê:</strong> Công nghệ thông tin và phát triển phần mềm.</p>
+                <p><strong>Mục tiêu nghề nghiệp:</strong> Trở thành lập trình viên phần mềm chuyên nghiệp.</p>
+                <p><strong>Kỹ năng:</strong></p>
+                <ul>
+                    <li>Kỹ năng lập trình: Python, C++, JavaScript.</li>
+                    <li>Kỹ năng thiết kế web: HTML, CSS, React.</li>
+                    <li>Kỹ năng làm việc nhóm và giao tiếp hiệu quả.</li>
+                </ul>
+            </section>
+            <nav class="navigation">
+                <a href="ke-hoach-hoc-tap.html">Kế hoạch học tập</a>
+                <a href="so-thich.html">Sở thích</a>
+                <a href="lien-he.html">Liên hệ</a>
+            </nav>
+        </main>
+        <footer>
+            <p>&copy; 2024 Lương Trường Thành. Tất cả các quyền được bảo lưu.</p>
+        </footer>
     </div>
-    <footer>
-        <p>&copy; 2024 Lương Trường Thành. Tất cả các quyền được bảo lưu.</p>
-    </footer>
 </body>
 
 </html>
